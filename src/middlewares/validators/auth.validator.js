@@ -1,4 +1,4 @@
-import { check, validationResult } from "express-validator";
+import { body, validationResult } from "express-validator";
 
 // Middleware to check results and return standardized response
 export function validate (req, res, next) {
@@ -14,21 +14,21 @@ export function validate (req, res, next) {
 
 // Validation rules for user registration
 export const validateRegister = [
-  check('username')
+  body('username')
     .exists({ checkFalsy: true })
     .withMessage('Username is required')
     .isLength({ min: 4 })
     .withMessage('Username must be at least 3 characters')
     .trim(),
 
-  check('email')
+  body('email')
     .exists({ checkFalsy: true })
     .withMessage('Email is required')
     .isEmail()
     .withMessage('Provide a valid email address')
     .normalizeEmail(),
 
-  check('password')
+  body('password')
     .exists({ checkFalsy: true })
     .withMessage('Password is required')
     .isLength({ min: 8 })
@@ -41,19 +41,19 @@ export const validateRegister = [
 
 // Optional: validation for login (email/username + password)
 export const validateLogin = [
-  check('email')
+  body('email')
     .optional()
     .isEmail()
     .withMessage('Provide a valid email address')
     .normalizeEmail(),
 
-  check('username')
+  body('username')
   .optional()
   .isLength({ min: 3 })
   .withMessage('Username must be at least 3 characters')
   .trim(),
 
-  check('password')
+  body('password')
   .exists({ checkFalsy: true })
   .withMessage('Password is required'),
 
