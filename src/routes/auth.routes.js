@@ -9,7 +9,6 @@ const authRouter = Router();
 // @goal To register New User
 authRouter.post("/register",validateRegister,registerUserController);
 
-
 // @route /api/auth/Login Api
 // @goal To Login the Registered User
 authRouter.post("/login",loginUserController);
