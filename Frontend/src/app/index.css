@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom right, #9c9c9c, #fffbeb, #727272);
+  }
+
+  body {
+    background-attachment: fixed;
+  }
+}
