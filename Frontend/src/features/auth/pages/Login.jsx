@@ -1,20 +1,37 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate, Navigate } from "react-router";
+import { useAuth } from "../hooks/useAuth";
+import { useSelector } from "react-redux";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const user = useSelector(state=>state.auth.user);
+  const loading = useSelector(state=> state.auth.loading);
+
+  const navigate = useNavigate();
+  const { handleLogin } = useAuth();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Replace with real auth call
-    console.log("Login attempt", { email, password });
+
+    const payload = {
+      email, password
+    }
+    
+    await handleLogin(payload);
+    navigate("/");
   };
 
+  if(!loading && user){
+    return <Navigate to="/" replace/>
+  }
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-rose-50 via-amber-50 to-white p-6">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br bg-[#ead9d5] p-6">
       <div className="w-full max-w-md bg-white rounded-3xl p-8 shadow-md border border-gray-100">
-        <h2 className="text-2xl font-semibold text-slate-900 mb-1">Log in</h2>
+        <h2 className="text-3xl font-semibold text-slate-900 mb-4">Login</h2>
         <p className="text-sm text-slate-500 mb-6">
           By logging in, you agree to our <a className="text-orange-600 font-medium">Terms of Use</a>.
         </p>
@@ -45,7 +62,7 @@ const Login = () => {
         <div className="mt-6 text-center text-sm text-slate-500">
           <span className="mx-1">Don't have an account?</span>{" "}
           <Link to="/register" className="text-orange-600 font-medium hover:underline">
-            Register
+            Sign up
           </Link>
         </div>
       </div>
