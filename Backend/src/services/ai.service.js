@@ -13,8 +13,8 @@ const geminiModel = new ChatGoogleGenerativeAI({
 })
 
 export const generateMessage = async (messages)=>{
-    
-    const response = await mistralModel.invoke(messages.map((msg)=>{
+
+    const response = await geminiModel.invoke(messages.map((msg)=>{
         if(msg.role === "user"){
             return new HumanMessage(msg.content);
         }else if(msg.role === "ai"){
