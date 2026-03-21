@@ -10,25 +10,16 @@
   src: url(../assets//PPLX-Sans-Beta-v1-VF.woff2);
 }
 
-@layer base {
-  html,
-  body,
-  #root {
-    min-height: 100vh;
-    background-image: linear-gradient(to bottom right, #9c9c9c, #fffbeb, #727272);
-  }
-
-  body {
-    background-attachment: fixed;
-    font-family: regular;
-  }
+body {
+  background-color: rgb(44, 44, 44);
+  font-family: regular;
 }
 
-textarea::-webkit-scrollbar{
+textarea::-webkit-scrollbar {
   width: 0.5rem;
 }
 
 textarea::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
   border-radius: 1rem;
 }
