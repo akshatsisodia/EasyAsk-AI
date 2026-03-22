@@ -31,10 +31,10 @@ const Register = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-linear-to-br bg-[#ead9d5] p-6">
-      <div className="w-full max-w-md bg-white rounded-3xl p-8 shadow-md border border-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br bg-[#F8F9FA] p-6">
+      <div className="w-full max-w-md bg-[#F9FAFB] rounded-3xl p-8 shadow-md border border-gray-100">
         <h2 className="text-2xl font-semibold text-slate-900 mb-1">Create your account</h2>
-        <p className="text-sm text-slate-500 mb-6">Start using the platform with a free account</p>
+        <p className="text-sm text-slate-500 mb-6">Start your intellectual journey. </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>

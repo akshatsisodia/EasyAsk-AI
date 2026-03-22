@@ -29,10 +29,11 @@ const chats = [
   },
 ];
 
-export default function Sidebar({ collapsed = false, onToggle }) {
+export default function Sidebar({ collapsed = false, onToggle, isSidebarOpen }) {
+  
 
   return (
-    <aside onClick={()=>{if(collapsed){onToggle()}}} className={`shrink-0 ${collapsed ? "w-18" : "w-72"} bg-[#1a1a1a] text-gray-300 border-r border-[#2a2a2a] cursor-e-resize flex flex-col p-4 transition-all duration-200 min-h-screen`}>
+    <aside onClick={()=>{if(!collapsed){onToggle()}}} className={`shrink-0 ${collapsed ? "w-18" : "w-60"} bg-[#1a1a1a] text-gray-300 border-r border-[#2a2a2a] cursor-e-resize flex-col p-4 transition-all duration-200 min-h-screen hidden md:flex `}>
       <nav className="space-y-2">
         <div className="w-full flex items-start justify-between">
           <NavItem active collapsed={collapsed} className={`${collapsed ? "hidden" : "block"}`}>
@@ -66,7 +67,7 @@ export default function Sidebar({ collapsed = false, onToggle }) {
       </nav>
 
       <div className={`mt-6 border-t border-[#2a2a2a] pt-4 ${collapsed ? "hidden" : "block"}`}>
-        <div className="text-xs text-gray-400 uppercase mb-4">Recent</div>
+        <div className="text-md text-gray-400 capitalize mb-4">Your Chats</div>
         <div className="flex flex-col overflow-y-auto">
           {chats.map((chat, idx) => {
             return (
@@ -92,3 +93,5 @@ export default function Sidebar({ collapsed = false, onToggle }) {
     </aside>
   );
 }
+
+

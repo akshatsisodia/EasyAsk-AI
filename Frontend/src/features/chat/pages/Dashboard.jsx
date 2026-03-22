@@ -11,16 +11,21 @@ const Dashboard = () => {
 
   const { initializeSocketConnection } = useChat();
 
+  function handleToggle(){
+    setCollapsed((s) => !s)
+  }
+
   useEffect(() => {
     initializeSocketConnection();
   }, []);
 
   return (
     <div className="min-h-screen bg-[#171615] text-gray-300 flex">
-      <Sidebar collapsed={collapsed} onToggle={() => setCollapsed((s) => !s)} />
-      <MainContent collapsed={collapsed} />
+      <Sidebar collapsed={collapsed} onToggle={handleToggle} />
+      <MainContent collapsed={collapsed} onToggle={handleToggle}/>
     </div>
   );
 };
 
 export default Dashboard;
+

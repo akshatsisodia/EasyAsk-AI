@@ -21,7 +21,6 @@ export default function SearchInput({collapsed}) {
   const handleInput = () => {
     const el = textareaRef.current;
 
-
      el.style.height = "auto";
 
     const newHeight = el.scrollHeight;
@@ -37,8 +36,8 @@ export default function SearchInput({collapsed}) {
   };
 
   return (
-    <div className="w-full">
-      <div className="mx-auto w-full rounded-2xl bg-[#1a1a1a] border border-[#2a2a2a] px-4 py-3 gap-4 flex flex-col">
+    <div className="w-full px-5">
+      <div className="w-full rounded-2xl bg-[#1a1a1a] border border-[#2a2a2a] px-4 py-3 gap-4 grow flex flex-col">
         <textarea onKeyDown={handleKeyDown} ref={textareaRef} onInput={handleInput} rows={1} className="w-full resize-none bg-transparent overflow-hidden max-h-30 outline-none text-gray-300 placeholder-gray-500 text-md" placeholder="Ask Anything...." />
 
         <div className="flex items-center justify-between mt-3">
@@ -58,3 +57,4 @@ export default function SearchInput({collapsed}) {
     </div>
   );
 }
+
