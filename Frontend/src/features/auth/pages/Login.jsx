@@ -125,7 +125,7 @@ const Login = () => {
           </button>
         </form>
 
-        <div className="flex items-center my-6 w-full">
+        {/* <div className="flex items-center my-6 w-full">
           <div className="grow h-px bg-gray-300"></div>
           <span className="mx-4 text-gray-500 text-sm font-medium">OR</span>
           <div className="grow h-px bg-gray-300"></div>
@@ -142,9 +142,9 @@ const Login = () => {
             <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
           </svg>
           <p>Sign in with Google</p>
-        </div>
+        </div> */}
       </div>
-      <div className="mt-6 text-center text-sm text-slate-500">
+      <div className="mt-6 text-center text-md text-slate-500">
         <span className="mx-1">Don't have an account?</span>{" "}
         <Link to="/register" className="text-[#0D9488] font-medium hover:underline">
           Sign up
