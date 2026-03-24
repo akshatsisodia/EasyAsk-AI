@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useChat } from "../hooks/useChat";
 import { useSelector } from "react-redux";
+import ChatLayout from "../components/ChatLayout";
 
-import Layout from "../components/Layout";
+
 
 const Dashboard = () => {
   const user = useSelector((state) => state.auth.user);
@@ -14,8 +15,8 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#171615] text-gray-300 flex">
-      <Layout />
+    <div className="h-screen w-full bg-[#171615] text-gray-300 flex">
+      <ChatLayout/>
     </div>
   );
 };

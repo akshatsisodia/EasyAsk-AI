@@ -10,16 +10,29 @@
   src: url(../assets//PPLX-Sans-Beta-v1-VF.woff2);
 }
 
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
 body {
   background-color: rgb(44, 44, 44);
   font-family: regular;
 }
 
 textarea::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 0.2rem;
 }
 
 textarea::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #7d7d7d84;
   border-radius: 1rem;
 }
+
+.chatMessage::-webkit-scrollbar, .chatTitle::-webkit-scrollbar{
+  display: none;
+}
+
